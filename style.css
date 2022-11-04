@@ -1,0 +1,15 @@
+body {
+    background-color: #499302;
+    font-family: sans-serif;
+}
+
+section {
+    text-align: center;
+}
+
+input {
+    background-color: #029382;
+    color: white;
+    font-size: 16px;
+    border: 1px solid black;
+}

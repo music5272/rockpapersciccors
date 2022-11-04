@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Rock Paper Sciccors</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <script>
+            function generate(input) {
+                const userChoice = input;
+                let computerChoice = getComputerChoice();
+                let winningStatus = winningStatusFunc(userChoice, computerChoice);
+                alert("computer: " + computerChoice + "\n" + "user: " + userChoice + "\nwinner: " + winningStatus);
+            }
+
+            function getComputerChoice() {
+                let cCNumber = Math.floor(Math.random() * 3);
+                if (cCNumber == 0) {
+                    computerChoiceName = "rock";
+                } else if (cCNumber == 1) {
+                    computerChoiceName = "paper";
+                } else {
+                    computerChoiceName = "sciccors";
+                }
+                console.log(cCNumber);
+                return computerChoiceName;
+            }
+
+            function winningStatusFunc(user, computer) {
+                let winner;
+                if (user == "rock" && computer == "paper") {
+                    winner = "Computer";
+                } else if (user == computer) {
+                    winner = "drawn";
+                } else if (user == "paper" && computer == "sciccors") {
+                    winner = "Computer";
+                } else if (user = "sciccors" && computer == "rock") {
+                    winner = "Computer";
+                }  else {
+                    winner = "user";
+                }
+                return winner;
+            }
+        </script>
+    </head>
+    <body>
+        <section>
+            <h1>Rock Paper Sciccors</h1>
+            <input type="button" name="rock" value="Rock" id="btnRock" onClick="generate('rock')">
+            <input type="button" name="paper" value="Paper" id="btnPaper" onClick="generate('paper')">
+            <input type="button" name="sciccors" value="Sciccors" id="btnSciccors" onClick="generate('sciccors')">
+        </section>
+    </body>
+</html>
